@@ -4,8 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background=""
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/space"
+        />
 
     <TextView
         android:id="@+id/sample_text"
@@ -20,6 +26,7 @@
         android:text="ROCKET"
         android:textSize="50sp"
         android:textStyle="bold"
+        android:textColor="#0000ff"
         app:layout_constraintBottom_toBottomOf="@+id/sample_text1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -39,36 +46,40 @@
         android:text="RIDE"
         android:textSize="50sp"
         android:textStyle="bold"
+        android:textColor="#0000ff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="139dp"
-        android:layout_height="53dp"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:text="Levels"
+        android:text="@string/button_Levels"
+        android:onClick="Levels"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sample_text1"
         app:layout_constraintVertical_bias="0.7"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="144dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:text="Settings"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/button_Settings"
+        android:onClick="Settings"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,17 +87,29 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="144dp"
-        android:layout_height="47dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
         android:layout_marginStart="8dp"
-        android:text="Quit"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="Quit"
+        android:text="@string/button_Quit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageButton
+        android:id="@+id/cartoon_rocket"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/cartoon-rocket"
+        android:onClick="Upgrade"
+        android:text="@string/button_Upgrade"
+
+        />
 
 
 </android.support.constraint.ConstraintLayout>
