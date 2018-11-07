@@ -8,10 +8,11 @@
     >
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/space"
-        />
+        android:id="@+id/gifImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/space_anim" />
 
     <TextView
         android:id="@+id/sample_text"
@@ -103,13 +104,16 @@
 
     <ImageButton
         android:id="@+id/cartoon_rocket"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:src="@drawable/cartoon-rocket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:onClick="Upgrade"
+        android:scaleType="fitXY"
+        android:src="@drawable/cartoon_rocket"
         android:text="@string/button_Upgrade"
-
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/sample_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sample_text"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

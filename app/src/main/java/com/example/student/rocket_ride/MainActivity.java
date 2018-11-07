@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         cartoon_rocket.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "it works", Toast.LENGTH_SHORT).show();
-        }
-                                          }
+            }
+        });
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
@@ -43,15 +43,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Settings(View view) {
-        Intent settingActivity = new Intent (this, SettingsActivity.class);
+        Intent settingActivity = new Intent(this, SettingsActivity.class);
         startActivity(settingActivity);
-
     }
 
     public void Upgrade(View view) {
         Intent upgradeActivity = new Intent(this, UpgradeActivity.class);
         startActivity(upgradeActivity);
-
     }
 
     public void Quit(View view) {
