@@ -1,7 +1,9 @@
 package com.example.student.rocket_ride;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,6 +24,24 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
 
+        button = (Button) findViewById(R.id.button); // Jonathan
+        button.setOnClickListener(new View.onClickListener(){
+            @Override
+                    public void OnClick(View v) {
+                openUpgradeActivity();
+
+            }
+        });
+    }
+    public void openUpgradeActivity(){
+        Intent intent= new Intent (this, UpgradesActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void buttonOnClick (View v) {
+        Button button=(Button) v;
+        startActivity(new Intent(getApplicationContext(), UpgradesActivity.class));
     }
 
     /**
