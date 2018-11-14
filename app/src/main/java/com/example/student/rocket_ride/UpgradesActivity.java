@@ -45,17 +45,17 @@ public class UpgradesActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (v.getId()) {
             case R.id.button1:
-                Toast.maketext(this, "button 1 Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "button 1 Clicked", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.button2:
-                Toast.maketext(this, "button 2 Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "button 2 Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button3:
-                Toast.maketext(this, "button 3 Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "button 3 Clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button4:
-                Toast.maketext(this, "button 4 Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "button 4 Clicked", Toast.LENGTH_SHORT).show();
                 break;
 
         }
