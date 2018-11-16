@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
-    ImageButton cartoon_rocket;
+    ImageButton Wrench;
 
 
     @Override
@@ -24,21 +24,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cartoon_rocket = (ImageButton) findViewById(R.id.cartoon_rocket);
+        Wrench = (ImageButton) findViewById(R.id.wrench);
 
-        cartoon_rocket.setOnClickListener(new View.OnClickListener() {
+        Wrench.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "it works", Toast.LENGTH_SHORT).show();
             }
         });
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+//        tv.setText(stringFromJNI());
     }
 
 
-    public void Levels(View view) {
-        Intent levelActivity = new Intent(this, LevelsActivity.class);
+    public void Play(View view) {
+        Intent levelActivity = new Intent(this, LevelSelectActivity.class);
         startActivity(levelActivity);
     }
 

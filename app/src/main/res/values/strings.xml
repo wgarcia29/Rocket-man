@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">Rocket-Ride</string>
-    <string name="button_Levels">Levels</string>
+    <string name="button_Levels">Play</string>
     <string name="title_activity_levels">LevelsActivity</string>
     <string name="button_Settings">Settings</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="button_Quit">Quit</string>
 
-    <string name="button_Upgrade">Upgrade</string>
+    <string name="button_wrench">Upgrade</string>
     <string name="title_activity_upgrade">UpgradeActivity</string>
+
+    <string name="lvl1_button">Level-1</string>
+    <string name="lvl2_button">Level-2</string>
+    <string name="lvl3_button">Level-3</string>
+    <string name="lvl4_button">Level-4</string>
+
 
 </resources>
