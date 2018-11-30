@@ -24,7 +24,8 @@
             android:name=".UpgradeActivity"
             android:label="@string/title_activity_upgrade"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LevelSelectActivity"></activity>
+        <activity android:name=".LevelSelectActivity" />
+        <activity android:name=".Level1_Activity"></activity>
     </application>
 
 </manifest>

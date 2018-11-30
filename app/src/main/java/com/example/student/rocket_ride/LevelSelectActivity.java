@@ -1,44 +1,42 @@
 package com.example.student.rocket_ride;
 
+import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
 public class LevelSelectActivity extends AppCompatActivity {
 
     private ImageButton level1;
-    private ImageButton level2;
-    private ImageButton level3;
-    private ImageButton level4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_select);
-
-        level1 = findViewById(R.id.level_1);
-        level2 = findViewById(R.id.level_2);
-        level3 = findViewById(R.id.level_3);
-        level4 = findViewById(R.id.level_4);
-
-        level1.setOnClickListener(toastListener);
-        level2.setOnClickListener(toastListener);
-        level3.setOnClickListener(toastListener);
-        level4.setOnClickListener(toastListener);
-
+        level1 = (ImageButton) findViewById(R.id.level_1);
+        level1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent upgradeActivity = new Intent(LevelSelectActivity.this, Level1_Activity.class);
+                startActivity(upgradeActivity);
+            }
+        });
 
     }
 
 
-    private View.OnClickListener toastListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(LevelSelectActivity.this, view.getTag().toString(), Toast.LENGTH_SHORT).show();
-            }
-        };
-
 
 }
+/*
+    public void Upgrade(View view) {
+        Intent upgradeActivity = new Intent(this, UpgradeActivity.class);
+        startActivity(upgradeActivity);
+    }
+*/
