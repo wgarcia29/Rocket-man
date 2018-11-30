@@ -13,6 +13,7 @@
     <string name="lvl2_button">Level-2</string>
     <string name="lvl3_button">Level-3</string>
     <string name="lvl4_button">Level-4</string>
+    <string name="title_activity_level1_">Level1_Activity</string>
 
 
 </resources>

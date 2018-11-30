@@ -16,24 +16,22 @@ public class MainActivity extends AppCompatActivity {
         System.loadLibrary("native-lib");
     }
 
-    ImageButton Wrench;
+    private ImageButton Wrench3;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Wrench = (ImageButton) findViewById(R.id.wrench);
-
-        Wrench.setOnClickListener(new View.OnClickListener() {
+        Wrench3 = (ImageButton) findViewById(R.id.wrench3);
+        Wrench3.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "it works", Toast.LENGTH_SHORT).show();
-            }
+                Intent upgradeActivity = new Intent(MainActivity.this, UpgradeActivity.class);
+                startActivity(upgradeActivity);            }
         });
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-//        tv.setText(stringFromJNI());
+
     }
 
 
@@ -47,11 +45,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(settingActivity);
     }
 
-    public void Upgrade(View view) {
-        Intent upgradeActivity = new Intent(this, UpgradeActivity.class);
-        startActivity(upgradeActivity);
-    }
-
     public void Quit(View view) {
         moveTaskToBack(true);
         android.os.Process.killProcess(android.os.Process.myPid());
@@ -62,5 +55,5 @@ public class MainActivity extends AppCompatActivity {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    public native String stringFromJNI();
+    //public native String stringFromJNI();
 }
