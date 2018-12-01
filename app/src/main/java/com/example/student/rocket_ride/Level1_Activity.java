@@ -1,5 +1,6 @@
 package com.example.student.rocket_ride;
 
+import android.animation.ValueAnimator;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.graphics.Canvas;
@@ -43,23 +44,23 @@ public class Level1_Activity extends AppCompatActivity {
         float bottomOfScreen = getResources().getDisplayMetrics()
                 .heightPixels - (meteor.getHeight() * 4);
 
+
         meteor.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
-                .setInterpolator(new BounceInterpolator())
-                .setDuration(6000);
+                .setDuration(2000);
 
+/*
         Rect rc1 = new Rect();
         ship_1.getDrawingRect(rc1);
         Rect rc2 = new Rect();
         meteor.getDrawingRect(rc2);
-        if (Rect.intersects(rc1, rc2) ){
+        if (Rect.intersects(rc1, rc2)) {
             moveTaskToBack(true);
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
-        }
-
-    }
+*/
+               }
 
 
     private final class ChoiceTouchListener implements View.OnTouchListener {
@@ -91,7 +92,6 @@ public class Level1_Activity extends AppCompatActivity {
             rootLayout.invalidate();
             return true;
         }
-
 
     }
 

@@ -9,13 +9,44 @@
     tools:layout_editor_absoluteY="81dp">
 
 
+    <TextView
+        android:id="@+id/sample_text4"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#ff0000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/level_3"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sample_text5"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#ff0000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/level_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline" />
+
     <ImageButton
         android:id="@+id/level_1"
         android:layout_width="120dp"
         android:layout_height="123dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
@@ -31,14 +62,10 @@
 
     <ImageButton
         android:id="@+id/level_2"
-        android:layout_width="109dp"
-        android:layout_height="115dp"
+        android:layout_width="113dp"
+        android:layout_height="118dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
@@ -49,10 +76,10 @@
         app:layout_anchorGravity="right|bottom"
         app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.967" />
+        app:layout_constraintVertical_bias="0.884" />
 
     <ImageButton
         android:id="@+id/level_3"
@@ -60,10 +87,8 @@
         android:layout_height="109dp"
         android:layout_marginStart="8dp"
 
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
@@ -75,17 +100,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline" />
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
+        app:layout_constraintVertical_bias="0.77" />
 
     <ImageButton
         android:id="@+id/level_4"
-        android:layout_width="121dp"
+        android:layout_width="120dp"
         android:layout_height="109dp"
         android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:layout_weight="1"
         android:background="@android:color/transparent"
@@ -99,21 +123,21 @@
         app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
         app:layout_constraintTop_toTopOf="@+id/horizontal_guideline"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="193dp"
         android:layout_height="68dp"
         android:layout_margin="8dp"
-        android:text="ROC"
+        android:text="LEV"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="#ff0000"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/sample_text1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -122,32 +146,64 @@
         android:id="@+id/sample_text1"
         android:layout_width="99dp"
         android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="KET"
+        android:layout_marginTop="8dp"
+        android:text="ELS"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="#ff0000"
         android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="9dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sample_text2"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#ff0000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/level_1"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/sample_text3"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#ff0000"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/level_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline" />
+
 
     <android.support.constraint.Guideline
         android:id="@+id/vertical_guideline"
         android:layout_width="1dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="192dp" />
+        app:layout_constraintGuide_begin="204dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/horizontal_guideline"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="255dp" />
+        app:layout_constraintGuide_begin="352dp" />
 
 
 </android.support.constraint.ConstraintLayout>
