@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
-/*
+
     SwitchCompat musicSwitch, soundSwitch, thirdSwitch;
 
     boolean musicState, soundState, thirdState;
@@ -66,5 +66,5 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
     }
-    */
+
 }
