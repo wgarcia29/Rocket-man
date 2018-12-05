@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +32,6 @@ public class Level1_Activity extends AppCompatActivity {
 
     private ImageView ship;
     private ViewGroup rootLayout;
-    private int newX;
-    private int newY;
     /*
     private Rect rectShip = new Rect();
     private Rect rectMeteor = new Rect();
@@ -61,7 +60,18 @@ public class Level1_Activity extends AppCompatActivity {
 
 //        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(350, 350);
 //        ship.setLayoutParams(layoutParams);
-        ship.setOnTouchListener(new ChoiceTouchListener());
+        rootLayout.setOnTouchListener(new SimpleTouchListener());
+//        ship.setOnTouchListener(new ChoiceTouchListener());
+        ship.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
+                    shipMoving = true;
+                else if (event.getAction() == MotionEvent.ACTION_DOWN)
+                    shipMoving = false;
+                return false;
+            }
+        });
 
         //RelativeLayout main = (RelativeLayout) findViewById(R.id.view_root);
         //Button btn = (Button) findViewById(R.id.button);
@@ -184,30 +194,38 @@ public class Level1_Activity extends AppCompatActivity {
     }
 
     int moveX, moveY;
+    private boolean shipMoving = false;
 
-    private final class ChoiceTouchListener implements View.OnTouchListener {
-        public boolean onTouch(View view, MotionEvent event) {
+    private class SimpleTouchListener implements View.OnTouchListener {
+        @Override
+        public boolean onTouch(View screen, MotionEvent event) {
             switch (event.getAction() & MotionEvent.ACTION_MASK) {
-                case MotionEvent.ACTION_DOWN:
-                    moveX = (int) event.getX();
-                    moveY = (int) event.getY();
-                    Log.d(TAG, "onTouch: initial event location: " + moveX+","+moveY);
-                    Log.d(TAG, "onTouch: initial view location: " + view.getX() + ","+view.getY());
-                    break;
+//                case MotionEvent.ACTION_DOWN:
+//                    // TODO check if ship touched
+//                    Rect shipRect = new Rect();
+//                    ship.getHitRect(shipRect);
+//                    if (shipRect.contains(moveX, moveY)) {
+//                        shipMoving = true;
+//                        Log.d(TAG, "onTouch: picked up");
+//                    }
+//                    moveX = (int) event.getX();
+//                    moveY = (int) event.getY();
+////                    ship.setX(moveX);
+////                    ship.setY(moveY);
+//                    break;
                 case MotionEvent.ACTION_UP:
-                    break;
-                case MotionEvent.ACTION_POINTER_DOWN:
-                    break;
-                case MotionEvent.ACTION_POINTER_UP:
+                    shipMoving = false;
+                    Log.d(TAG, "onTouch: dropped it");
                     break;
                 case MotionEvent.ACTION_MOVE:
+                    if (!shipMoving)
+                        break;
                     int newX = (int)event.getX();
                     int newY = (int)event.getY();
 
                     Log.d(TAG, "onTouch: moving location by ("+(newX-moveX)+","+(newY-moveY)+")");
-
-                    view.setX(view.getX() + newX - moveX);
-                    view.setY(view.getY() + newY - moveY);
+                    ship.setX(newX);// - moveX);
+                    ship.setY(newY);// - moveY);
 
                     moveX = newX;
                     moveY = newY;
@@ -217,9 +235,41 @@ public class Level1_Activity extends AppCompatActivity {
             rootLayout.invalidate();
             return true;
         }
-
-
     }
+
+//    private final class ChoiceTouchListener implements View.OnTouchListener {
+//        public boolean onTouch(View view, MotionEvent event) {
+//            switch (event.getAction() & MotionEvent.ACTION_MASK) {
+//                case MotionEvent.ACTION_DOWN:
+//                    moveX = (int) event.getX();
+//                    moveY = (int) event.getY();
+//                    Log.d(TAG, "onTouch: initial event location: " + moveX+","+moveY);
+//                    Log.d(TAG, "onTouch: initial view location: " + view.getX() + ","+view.getY());
+//                    break;
+//                case MotionEvent.ACTION_UP:
+//                    break;
+//                case MotionEvent.ACTION_POINTER_DOWN:
+//                    break;
+//                case MotionEvent.ACTION_POINTER_UP:
+//                    break;
+//                case MotionEvent.ACTION_MOVE:
+//                    int newX = (int)event.getX();
+//                    int newY = (int)event.getY();
+//
+//                    Log.d(TAG, "onTouch: moving location by ("+(newX-moveX)+","+(newY-moveY)+")");
+//
+//                    view.setX(view.getX() + newX - moveX);
+//                    view.setY(view.getY() + newY - moveY);
+//
+//                    moveX = newX;
+//                    moveY = newY;
+//
+//                    break;
+//            }
+//            rootLayout.invalidate();
+//            return true;
+//        }
+//    }
 
 
     private ValueAnimator.AnimatorUpdateListener createCollisionDetector(final ImageView meteor) {
@@ -238,7 +288,7 @@ public class Level1_Activity extends AppCompatActivity {
 //                        moveTaskToBack(true);
 //                        android.os.Process.killProcess(android.os.Process.myPid());
 //                        System.exit(1);
-//                        finish();
+                        finish();
                     }
                 }
             };
