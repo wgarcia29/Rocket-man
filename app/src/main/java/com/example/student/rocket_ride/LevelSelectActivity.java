@@ -15,12 +15,15 @@ import android.widget.Toast;
 public class LevelSelectActivity extends AppCompatActivity {
 
     private ImageButton level1;
+    private ImageButton level2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_select);
         level1 = (ImageButton) findViewById(R.id.level_1);
+        level2 = (ImageButton) findViewById(R.id.level_2);
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,12 +31,19 @@ public class LevelSelectActivity extends AppCompatActivity {
                 startActivity(upgradeActivity);
             }
         });
+        level2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+            Intent upgradeActivity = new Intent(LevelSelectActivity.this, activity_level2.class);
+            startActivity(upgradeActivity);
+             }
+        });
+        }
 
     }
 
 
 
-}
 /*
     public void Upgrade(View view) {
         Intent upgradeActivity = new Intent(this, UpgradeActivity.class);
