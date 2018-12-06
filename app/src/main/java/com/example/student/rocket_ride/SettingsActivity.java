@@ -25,15 +25,15 @@ public class SettingsActivity extends AppCompatActivity {
         preferences = getSharedPreferences("PREFS", 0);
         musicState = preferences.getBoolean("musicSwitch", false);
         soundState = preferences.getBoolean("soundSwitch", false);
-        thirdState = preferences.getBoolean("thirdSwitch", false);
+        //thirdState = preferences.getBoolean("thirdSwitch", false);
 
         musicSwitch = (SwitchCompat) findViewById(R.id.musicSwitch);
         soundSwitch = (SwitchCompat) findViewById(R.id.soundSwitch);
-        thirdSwitch = (SwitchCompat) findViewById(R.id.thirdSwitch);
+        //thirdSwitch = (SwitchCompat) findViewById(R.id.thirdSwitch);
 
         musicSwitch.setChecked(musicState);
         soundSwitch.setChecked(soundState);
-        thirdSwitch.setChecked(thirdState);
+        //thirdSwitch.setChecked(thirdState);
 
         musicSwitch.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -55,16 +55,16 @@ public class SettingsActivity extends AppCompatActivity {
                 editor.apply();
             }
         });
-        thirdSwitch.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                thirdState = !thirdState;
-                thirdSwitch.setChecked(thirdState);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putBoolean("third_Switch", thirdState);
-                editor.apply();
-            }
-        });
+        //thirdSwitch.setOnClickListener(new View.OnClickListener(){
+        //        @Override
+        //        public void onClick(View v) {
+        //            thirdState = !thirdState;
+        //            thirdSwitch.setChecked(thirdState);
+        //            SharedPreferences.Editor editor = preferences.edit();
+        //            editor.putBoolean("third_Switch", thirdState);
+        //            editor.apply();
+        //        }
+        //});
     }
 
 }

@@ -16,6 +16,7 @@ public class LevelSelectActivity extends AppCompatActivity {
 
     private ImageButton level1;
     private ImageButton level2;
+    private ImageButton level3;
 
 
     @Override
@@ -24,6 +25,8 @@ public class LevelSelectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_level_select);
         level1 = (ImageButton) findViewById(R.id.level_1);
         level2 = (ImageButton) findViewById(R.id.level_2);
+        level3 = (ImageButton) findViewById(R.id.level_3);
+
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,16 +34,25 @@ public class LevelSelectActivity extends AppCompatActivity {
                 startActivity(upgradeActivity);
             }
         });
-        level2.setOnClickListener(new View.OnClickListener(){
+
+        level2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-            Intent upgradeActivity = new Intent(LevelSelectActivity.this, activity_level2.class);
-            startActivity(upgradeActivity);
-             }
+            public void onClick(View view) {
+                Intent upgradeActivity = new Intent(LevelSelectActivity.this, activity_level2.class);
+                startActivity(upgradeActivity);
+            }
         });
-        }
+
+        level3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent upgradeActivity = new Intent(LevelSelectActivity.this, activity_level3.class);
+                startActivity(upgradeActivity);
+            }
+        });
 
     }
+}
 
 
 

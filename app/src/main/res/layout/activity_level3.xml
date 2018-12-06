@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Level1_Activity"
-    android:id="@+id/view_root1">
+    tools:context=".activity_level3"
+    android:id="@+id/view_root2">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView2"
@@ -15,17 +15,17 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:scaleType="fitXY"
-        android:src="@drawable/lvl2_background" />
+        android:src="@drawable/lvl_3background" />
 
     <ImageView
-        android:id="@+id/ship_2"
+        android:id="@+id/ship_3"
         android:layout_width="50dp"
         android:layout_height="94dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/ship_2" />
+        android:src="@drawable/ship_3" />
 
     <ImageView
         android:id="@+id/meteor"
@@ -58,7 +58,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="77dp"
+        android:layout_marginEnd="149dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/meteor" />
@@ -69,8 +69,8 @@
         android:layout_height="125dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginTop="4dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/meteor" />
@@ -93,7 +93,7 @@
         android:layout_height="125dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="230dp"
+        android:layout_marginStart="79dp"
         android:layout_marginTop="0dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
@@ -177,7 +177,7 @@
         android:layout_height="125dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="81dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="0dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
@@ -290,6 +290,80 @@
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
         android:src="@drawable/meteor" />
+
+    <ImageView
+        android:id="@+id/meteor22"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
+    <ImageView
+        android:id="@+id/meteor23"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="231dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
+
+    <ImageView
+        android:id="@+id/meteor24"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
+    <ImageView
+        android:id="@+id/meteor25"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="305dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
+    <ImageView
+        android:id="@+id/meteor26"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="0dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
+    <ImageView
+        android:id="@+id/meteor27"
+        android:layout_width="76dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/meteor" />
+
 
 
 </RelativeLayout>
