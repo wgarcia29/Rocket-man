@@ -26,12 +26,12 @@ public class Level1_Activity extends AppCompatActivity {
     private ImageView meteor7;
     private ImageView meteor8;
     private ImageView meteor9;
-
-
+    private ImageView meteor10;
 
 
     private ImageView ship;
     private ViewGroup rootLayout;
+
     /*
     private Rect rectShip = new Rect();
     private Rect rectMeteor = new Rect();
@@ -55,7 +55,7 @@ public class Level1_Activity extends AppCompatActivity {
         meteor7 = (ImageView) findViewById(R.id.meteor7);
         meteor8 = (ImageView) findViewById(R.id.meteor8);
         meteor9 = (ImageView) findViewById(R.id.meteor9);
-
+        meteor10 = (ImageView) findViewById(R.id.meteor10);
 
 
 //        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(350, 350);
@@ -86,7 +86,7 @@ public class Level1_Activity extends AppCompatActivity {
                 .setStartDelay(1400)
                 .setInterpolator(new AccelerateInterpolator())
                 .setUpdateListener(createCollisionDetector(meteor0))
-                .setDuration(2000);
+                .setDuration(7000);
         meteor1.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
@@ -101,7 +101,7 @@ public class Level1_Activity extends AppCompatActivity {
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
                 .setUpdateListener(createCollisionDetector(meteor3))
-                .setDuration(2500);
+                .setDuration(5500);
         meteor4.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
@@ -111,12 +111,12 @@ public class Level1_Activity extends AppCompatActivity {
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
                 .setUpdateListener(createCollisionDetector(meteor5))
-                .setDuration(5000);
+                .setDuration(4000);
         meteor6.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
                 .setUpdateListener(createCollisionDetector(meteor6))
-                .setDuration(5500);
+                .setDuration(2300);
         meteor7.animate()
                 .translationY(bottomOfScreen)
                 .setInterpolator(new AccelerateInterpolator())
@@ -132,64 +132,12 @@ public class Level1_Activity extends AppCompatActivity {
                 .setInterpolator(new AccelerateInterpolator())
                 .setUpdateListener(createCollisionDetector(meteor9))
                 .setDuration(6600);
+        meteor10.animate()
+                .translationY(bottomOfScreen)
+                .setInterpolator(new AccelerateInterpolator())
+                .setUpdateListener(createCollisionDetector(meteor9))
+                .setDuration(6900);
 
-
-/*
-        main.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                meteor0.setX(event.getX());
-                meteor0.setY(event.getY());
-                return true;
-            }
-        });
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rectShip.left = (int) ship.getX();
-                rectShip.top = (int) ship.getY();
-                rectShip.right = (int) ship.getX() + ship.getWidth();
-                rectShip.bottom = (int) ship.getY() + ship.getHeight();
-
-                rectShip.left = (int) meteor0.getX();
-                rectShip.top = (int) meteor0.getY();
-                rectShip.right = (int) meteor0.getX() + meteor0.getWidth();
-                rectShip.bottom = (int) meteor0.getY() + meteor0.getHeight();
-
-                Log.e("TEST", "handleCollision: " + handleCollision(rectShip, rectMeteor));
-            }
-        });
-    }
-
-    private boolean handleCollision(Rect one, Rect two) {
-        boolean hasCollision = hasCollision(one, two);
-        if (collisionEventHandled != hasCollision) {
-            collisionEventHandled = hasCollision;
-            return hasCollision;
-        }
-        return false;
-    }
-
-    private static boolean hasCollision(Rect one, Rect two) {
-        return (one.left < two.right &&
-                one.right > two.left &&
-                one.top < two.bottom &&
-                one.bottom > two.top);
-    }
-
-*/
-
-/*
-        Rect rc1 = new Rect();
-        ship.getDrawingRect(rc1);
-        Rect rc2 = new Rect();
-        meteor0.getDrawingRect(rc2);
-        if (Rect.intersects(rc1, rc2)) {
-            moveTaskToBack(true);
-            android.os.Process.killProcess(android.os.Process.myPid());
-            System.exit(1);
-*/
 
     }
 
@@ -220,10 +168,10 @@ public class Level1_Activity extends AppCompatActivity {
                 case MotionEvent.ACTION_MOVE:
                     if (!shipMoving)
                         break;
-                    int newX = (int)event.getX();
-                    int newY = (int)event.getY();
+                    int newX = (int) event.getX();
+                    int newY = (int) event.getY();
 
-                    Log.d(TAG, "onTouch: moving location by ("+(newX-moveX)+","+(newY-moveY)+")");
+                    Log.d(TAG, "onTouch: moving location by (" + (newX - moveX) + "," + (newY - moveY) + ")");
                     ship.setX(newX);// - moveX);
                     ship.setY(newY);// - moveY);
 
@@ -237,64 +185,30 @@ public class Level1_Activity extends AppCompatActivity {
         }
     }
 
-//    private final class ChoiceTouchListener implements View.OnTouchListener {
-//        public boolean onTouch(View view, MotionEvent event) {
-//            switch (event.getAction() & MotionEvent.ACTION_MASK) {
-//                case MotionEvent.ACTION_DOWN:
-//                    moveX = (int) event.getX();
-//                    moveY = (int) event.getY();
-//                    Log.d(TAG, "onTouch: initial event location: " + moveX+","+moveY);
-//                    Log.d(TAG, "onTouch: initial view location: " + view.getX() + ","+view.getY());
-//                    break;
-//                case MotionEvent.ACTION_UP:
-//                    break;
-//                case MotionEvent.ACTION_POINTER_DOWN:
-//                    break;
-//                case MotionEvent.ACTION_POINTER_UP:
-//                    break;
-//                case MotionEvent.ACTION_MOVE:
-//                    int newX = (int)event.getX();
-//                    int newY = (int)event.getY();
-//
-//                    Log.d(TAG, "onTouch: moving location by ("+(newX-moveX)+","+(newY-moveY)+")");
-//
-//                    view.setX(view.getX() + newX - moveX);
-//                    view.setY(view.getY() + newY - moveY);
-//
-//                    moveX = newX;
-//                    moveY = newY;
-//
-//                    break;
-//            }
-//            rootLayout.invalidate();
-//            return true;
-//        }
-//    }
-
 
     private ValueAnimator.AnimatorUpdateListener createCollisionDetector(final ImageView meteor) {
 
-            return new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    Rect shipRect = new Rect(), meteorRect = new Rect();
-                    ship.getHitRect(shipRect);
-                    meteor.getHitRect(meteorRect);
-                    if (Rect.intersects(shipRect, meteorRect)) {
-                        Log.d(TAG, "onAnimationUpdate: collision detected!");
-                        Log.d(TAG, "shipRect: (" + shipRect.centerX()+","+shipRect.centerY()+")");
-                        Log.d(TAG, "shipRect: (" + meteorRect.centerX()+","+meteorRect.centerY()+")");
-                        // return to menu
+        return new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                Rect shipRect = new Rect(), meteorRect = new Rect();
+                ship.getHitRect(shipRect);
+                meteor.getHitRect(meteorRect);
+                if (Rect.intersects(shipRect, meteorRect)) {
+                    Log.d(TAG, "onAnimationUpdate: collision detected!");
+                    Log.d(TAG, "shipRect: (" + shipRect.centerX() + "," + shipRect.centerY() + ")");
+                    Log.d(TAG, "shipRect: (" + meteorRect.centerX() + "," + meteorRect.centerY() + ")");
+                    // return to menu
 //                        moveTaskToBack(true);
 //                        android.os.Process.killProcess(android.os.Process.myPid());
 //                        System.exit(1);
-                        finish();
-                    }
+                    finish();
                 }
-            };
+            }
+        };
     }
-
-
-
-
 }
+
+
+
+
